@@ -3,7 +3,7 @@ package dmdev;
 /**
  * 1. Дан порядоквый номер месяца
  */
-public class SwitchExample {
+public class Switch {
     public static void main(String[] args) {
         int month = 1;
         switch (month) {
