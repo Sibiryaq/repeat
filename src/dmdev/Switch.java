@@ -1,11 +1,14 @@
 package dmdev;
 
+import java.util.Scanner;
+
 /**
  * 1. Дан порядоквый номер месяца
  */
 public class Switch {
     public static void main(String[] args) {
-        int month = 1;
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
         switch (month) {
             case 12, 1, 2 -> System.out.println("Зима");
             case 3, 4, 5 -> System.out.println("Весна");
