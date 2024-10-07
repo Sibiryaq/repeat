@@ -1,58 +1,92 @@
 package praktikum.financeApp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ExpensesManager {
-    ArrayList<Double> expenses;
+    HashMap<String, ArrayList<Double>> expensesByCategories;
 
     ExpensesManager() {
-        expenses = new ArrayList<>();
+        expensesByCategories = new HashMap<>();
     }
 
-    double saveExpense(double moneyBeforeSalary, double expense) {
+    double saveExpense(double moneyBeforeSalary, String category, double expense) {
         moneyBeforeSalary = moneyBeforeSalary - expense;
-        expenses.add(expense);
         System.out.println("Значение сохранено! Ваш текущий баланс в рублях: " + moneyBeforeSalary);
-
+        if (expensesByCategories.containsKey(category)) {
+            ArrayList<Double> expenses = expensesByCategories.get(category);
+            expenses.add(expense);
+        } else {
+            ArrayList<Double> expenses = new ArrayList<>();
+            expenses.add(expense);
+            expensesByCategories.put(category, expenses);
+        }
         if (moneyBeforeSalary < 1000) {
             System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");
         }
         return moneyBeforeSalary;
     }
 
-    void printAllExpenses() {
-        for (int i = 0; i < expenses.size(); i++) {
-            System.out.println("Трата № " + (i + 1) + ". Потрачено " + expenses.get(i) + " рублей");
+    void printAllExpensesByCategories() {
+        for (String category : expensesByCategories.keySet()) {
+            System.out.println(category);
+            ArrayList<Double> expenses = expensesByCategories.get(category);
+            for (Double expense : expenses) {
+                System.out.println(expense);
+            }
         }
     }
 
-    double findMaxExpense() {
+    double findMaxExpenseInCategory(String category) {
         double maxExpense = 0;
-        for (Double expense : expenses) {
-            if (expense > maxExpense) {
-                maxExpense = expense;
+        if (expensesByCategories.containsKey(category)) {
+            ArrayList<Double> expenses = expensesByCategories.get(category);
+            for (Double expense : expenses) {
+                if (expense > maxExpense) {
+                    maxExpense = expense;
+                }
             }
+        } else {
+            System.out.println("Такой категории пока нет.");
         }
         return maxExpense;
     }
 
     void removeAllExpenses() {
-        expenses.clear();
-        System.out.println("Список трат пуст");
+        expensesByCategories.clear();
+        System.out.println("Траты удалены.");
     }
 
-    void removeExpense(double expense) {
-        int index;
-        if (expenses.contains(expense)) {
-            for (int i = 0; i < expenses.size(); i++) {
-                if (expenses.get(i) == expense) {
-                    index = i;
-                    expenses.remove(index);
-                    System.out.println("Трата удалена");
-                     break;
+    double getExpensesSum() {  // Напишите метод для получения суммы всех трат
+        double result = 0;
+        for (ArrayList<Double> categoryExpenses : expensesByCategories.values()) {
+            for (Double expense : categoryExpenses) {
+                result += expense;
+            }
+        }
+        return result;
+    }
+
+    void removeCategory(String name) {
+        expensesByCategories.remove(name); // Напишите метод для удаления категории
+    }
+
+    String getMaxCategoryName() {// Напишите метод для получения категории, где размер трат больше всего
+        // Используйте эти переменные для сохранения промежуточных значений
+        double maxCategorySum = 0;
+        String maxCategoryName = "";
+
+        for (String category : expensesByCategories.keySet()) {
+            double sum = 0;
+            for (double expenses : expensesByCategories.get(category)) {
+                sum += expenses;
+                if (sum > maxCategorySum) {
+                    maxCategorySum = sum;
+                    maxCategoryName = category;
                 }
             }
 
         }
+        return maxCategoryName;
     }
 }
