@@ -42,7 +42,7 @@ public class ExpensesManager {
     }
 
     void removeExpense(double expense) {
-        int index = 0;
+        int index;
         if (expenses.contains(expense)) {
             for (int i = 0; i < expenses.size(); i++) {
                 if (expenses.get(i) == expense) {
