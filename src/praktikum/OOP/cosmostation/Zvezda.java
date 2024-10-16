@@ -1,4 +1,4 @@
-package praktikum.OOP.cosmo;
+package praktikum.OOP.cosmostation;
 
 class Zvezda extends Zarya {
 

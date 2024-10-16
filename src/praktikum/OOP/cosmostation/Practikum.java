@@ -1,4 +1,4 @@
-package praktikum.OOP.cosmo;
+package praktikum.OOP.cosmostation;
 
 public class Practikum {
     private static final double ACCEPTABLE_VIBRATION = 1;

@@ -1,4 +1,4 @@
-package praktikum.OOP.cosmo;
+package praktikum.OOP.cosmostation;
 
 class Zarya extends Mir { // доступ к любым изменениям класса запрещён
     protected Zarya() {
