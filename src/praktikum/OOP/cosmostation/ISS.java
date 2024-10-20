@@ -41,4 +41,5 @@ class ISS extends Zarya {
         energyConsumption += module.getEnergyConsumption() * 1.3;
         vibration += 2;
     }
+
 }
