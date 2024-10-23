@@ -5,10 +5,10 @@ import praktikum.sp3.Status;
 import java.util.Objects;
 
 public class Task {
-    private int id;
-    private String name;
-    private String description;
-    private Status status;
+    protected int id;
+    protected String name;
+    protected String description;
+    protected Status status;
 
     public Task() {
     }
