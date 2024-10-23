@@ -5,6 +5,8 @@ import praktikum.sp3.model.Subtask;
 import praktikum.sp3.model.Task;
 import praktikum.sp3.service.TaskManager;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         TaskManager tm = new TaskManager();
@@ -12,7 +14,9 @@ public class Main {
         Subtask  subtask;
         Epic epic;
 
-        task = new Task(10);
+        tm.createTask(new Task("Название", "Описание"));
+        System.out.println("Cписок созданных задач: " + tm.getTasks());
+
 
 
 
