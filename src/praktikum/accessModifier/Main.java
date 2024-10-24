@@ -15,7 +15,7 @@ public class Main {
          * Статический метод может обращаться только к статическим
          * переменным и методам
          */
-        System.out.println(aphorism);
+       // System.out.println(aphorism);
         //Non-static field aphorism cannot be referenced from a static context
     }
 }
