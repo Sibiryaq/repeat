@@ -1,7 +1,5 @@
 package praktikum.Core2.asymptoticComplexity;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Arrays;
 
 public class main {
