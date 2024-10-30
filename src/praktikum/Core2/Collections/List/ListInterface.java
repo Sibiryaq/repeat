@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections;
+package praktikum.Core2.Collections.List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,14 @@ import java.util.List;
 
 public class ListInterface {
     public static void main(String[] args) {
+        int size = 0; // текущий размер коллекции
+        int capacity = 10; //изначальная вместимость если нет мест, то *1,5
+        // можно указать другой изначальный размер new ArrayList<>(100);
+        // если финальный размер списка известен
+        // add O(1) но иногда когда размер заканчивается нужно пересоздавать список O(n), если по индексу, то элементы могут перемещаться вправо
+        // remove 0(1) если по индексу, то элементы могут перемещаться влево
+        // get O(1)
+
         List<Integer> integerList = new ArrayList<>();
         integerList.add(0);
         integerList.add(1);
@@ -30,6 +38,10 @@ public class ListInterface {
         // Списки полученные при помощи Arrays.asList и List.of считаются неизменяемыми
         // - не поддерживают операции удаления или добавления
         String[] massiveOfCities = cities2.toArray(new String[]{});
+        for(String elem :massiveOfCities) {
+            System.out.println(elem);
+        }
+
 
     }
 
