@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections;
+package praktikum.Core2.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;

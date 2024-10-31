@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Compare;
+package praktikum.Core2.collections.Compare;
 
 public class Item {
     public final String name;

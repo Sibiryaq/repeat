@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Comparable;
+package praktikum.Core2.collections.Comparable;
 
 public class Student implements Comparable<Student> {
     private final String name;

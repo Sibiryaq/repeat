@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Map;
+package praktikum.Core2.collections.Map;
 
 import java.time.LocalDate;
 import java.util.*;

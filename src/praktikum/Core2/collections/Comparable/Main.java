@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Comparable;
+package praktikum.Core2.collections.Comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;

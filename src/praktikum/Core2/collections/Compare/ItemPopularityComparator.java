@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Compare;
+package praktikum.Core2.collections.Compare;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.List;
+package praktikum.Core2.collections.List;
 
 public class LinkedListRealisation {
     public static void main(String[] args) {

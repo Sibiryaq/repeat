@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Set;
+package praktikum.Core2.collections.Set;
 
 import java.util.*;
 

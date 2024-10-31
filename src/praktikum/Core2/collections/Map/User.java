@@ -1,4 +1,4 @@
-package praktikum.Core2.Collections.Map;
+package praktikum.Core2.collections.Map;
 
 public class User {
     public Integer userId;

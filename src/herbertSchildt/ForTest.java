@@ -7,5 +7,8 @@ public class ForTest {
         for (x = 0; x < 10; x++) { // проинициализировали в цикле
             System.out.println("Значение x = " + x);
         }
+
+        int z, y, c;
+        z = y = c = 100;
     }
 }
