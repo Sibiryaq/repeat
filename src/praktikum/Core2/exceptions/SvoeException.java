@@ -1,8 +1,8 @@
 package praktikum.Core2.exceptions;
 
-public class SvoeException extends Exception{
-    /*
-    у Exception 4 конструктора, но допускается переопределять только нужные, и даже добавить свои
+public class SvoeException extends Exception {
+    /**
+     * у Exception 4 конструктора, но допускается переопределять только нужные, и даже добавить свои
      */
     public SvoeException() {
     }
