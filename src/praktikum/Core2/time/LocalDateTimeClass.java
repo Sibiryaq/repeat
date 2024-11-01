@@ -29,7 +29,15 @@ public class LocalDateTimeClass {
         plusMinutes(long minutesToAdd)/minusMinutes(long minutesToSubtract)
         plusSeconds(long secondstoAdd)/minusSeconds(long secondsToSubtract)
         plusNanos(long nanosToAdd)/minusNanos(long nanosToSubtract)
+
          */
+
+        // методы можно вызывать цепочкой
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("Сейчас " + currentDateTime);
+
+        LocalDateTime newDateTime = currentDateTime.plusMonths(3).plusWeeks(2);
+        System.out.println("Через три с половиной месяца будет " + newDateTime);
     }
 
 }
