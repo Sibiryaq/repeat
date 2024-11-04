@@ -1,7 +1,4 @@
-package praktikum.Core2.InternetHTTPJson;
-
-import java.util.HashMap;
-import java.util.Map;
+package praktikum.Core2.InternetHTTP;
 
 public class Main {
     public static void main(String[] args) {
