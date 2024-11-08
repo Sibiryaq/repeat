@@ -8,7 +8,7 @@ public class LinkedListRealisation {
          * addFirst addLast - O(1)
          * removeFirst removeLast - 0(1)
          * getFirst getLast - 0(1)
-         * add(int, T), remove(int) и get(int) - операции начинаются с поиска элемента, и чем ближе искомый элемент
+         * add(int, T), remove(int) и getTaskById(int) - операции начинаются с поиска элемента, и чем ближе искомый элемент
          * середине списк, чем дольше будет поиск, до O(n)
          */
 
