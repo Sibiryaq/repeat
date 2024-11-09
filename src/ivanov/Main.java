@@ -3,7 +3,15 @@ package ivanov;
 import ivanov.model.Task;
 import ivanov.service.*;
 
+import java.util.Comparator;
+
 public class Main {
+    static class TaskComparatorById implements Comparator<Task> {
+        @Override
+        public int compare(Task a, Task b) {
+            return a.getId() - b.getId();
+        }
+    }
     public static void main(String[] args) {
         TaskManager taskManager = Managers.getDefaultTaskManager();
         Task task = taskManager.createTask(new Task("Новая задача"));

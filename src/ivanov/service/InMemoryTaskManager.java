@@ -134,11 +134,18 @@ public class InMemoryTaskManager implements TaskManager {
         tasks.remove(id);
     }
 
+    public List<Task> getHistory() {
+        return historyManager.getAll();
+    }
+
     private int generateId() {
         return ++sequenceId;
     }
 
     private void calculateEpicStatus(Epic epic) {
+
     }
+
+
 
 }
