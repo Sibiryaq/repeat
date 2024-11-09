@@ -1,11 +1,11 @@
 package ivanov;
 
 import ivanov.model.Task;
-import ivanov.service.TaskManager;
+import ivanov.service.*;
 
 public class Main {
     public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager();
+        TaskManager taskManager = Managers.getDefaultTaskManager();
         Task task = taskManager.createTask(new Task("Новая задача"));
         System.out.println("Create task: " + task);
 
