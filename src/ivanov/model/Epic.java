@@ -3,11 +3,25 @@ package ivanov.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Epic extends Task{
+public class Epic extends Task {
     List<Subtask> subtasks = new ArrayList<>();
+
+    public Epic(String name) {
+        super(name);
+    }
+
 
     public List<Subtask> getSubtasks() {
         return subtasks;
+    }
+
+    public void setSubtasks(List<Subtask> subtasks) {
+        this.subtasks = subtasks;
+    }
+
+    @Override
+    public TaskType getType() {
+        return TaskType.EPIC;
     }
 
     @Override
@@ -16,6 +30,7 @@ public class Epic extends Task{
                 ", name='" + getName() + '\'' +
                 ", status='" + getStatus() + '\'' +
                 ", description='" + getDescription() + '\'' +
+                ", startTime=" + getStartTime() + '\'' +
                 "subtasks ID: [" + getSubtasks() +
                 "]}";
     }

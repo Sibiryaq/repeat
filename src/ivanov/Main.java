@@ -16,9 +16,15 @@ public class Main {
         taskManager.updateTask(taskFromManager);
         System.out.println("Update task: " + taskFromManager);
 
-        taskManager.deleteTaskById(taskFromManager.getId());
-        System.out.println("Delete task: " + task);
+        Task task2 = taskManager.createTask(new Task("Новая задача"));
 
+        System.out.println("\n Cозданные Эпики : \n" + taskManager.getAllEpics());
+        System.out.println("\n Созданные Задачи : \n" + taskManager.getAllTasks());
+        System.out.println("\n Созданные Подзадачи : \n" + taskManager.getAllSubtasks());
+
+        System.out.println("Показать историю : \n" + taskManager.getHistory());
+        System.out.println("\nЗапрос рандомной задачи : \n" + taskManager.getTaskById(2));
+        System.out.println("Показать историю : \n" + taskManager.getHistory());
 
     }
 }
