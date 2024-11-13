@@ -10,7 +10,6 @@ public class Epic extends Task {
         super(name);
     }
 
-
     public List<Subtask> getSubtasks() {
         return subtasks;
     }
@@ -31,7 +30,8 @@ public class Epic extends Task {
                 ", status='" + getStatus() + '\'' +
                 ", description='" + getDescription() + '\'' +
                 ", startTime=" + getStartTime() + '\'' +
-                "subtasks ID: [" + getSubtasks() +
+                ", duration=" + getDuration() + '\'' +
+                ", subtasks ID: [" + getSubtasks() +
                 "]}";
     }
 }

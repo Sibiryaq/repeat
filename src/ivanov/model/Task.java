@@ -1,6 +1,6 @@
 package ivanov.model;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.Objects;
 
 public class Task {
@@ -8,9 +8,14 @@ public class Task {
     protected String name;
     protected Status status;
     protected String description;
-    protected LocalDateTime startTime;
+    protected Instant startTime;
+    protected int duration;
+    protected Instant endTime;
 
-    public Task() {}
+    public Task() {
+        this.startTime = Instant.now();
+        this.duration = 0;
+    }
 
     public Task(String name) {
         this.name = name;
@@ -52,12 +57,28 @@ public class Task {
         return TaskType.TASK;
     }
 
-    public LocalDateTime getStartTime() {
+    public Instant getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(Instant startTime) {
         this.startTime = startTime;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public Instant getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Instant endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -65,16 +86,12 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return id == task.id
-                && Objects.equals(name, task.name)
-                && status == task.status
-                && Objects.equals(description, task.description)
-                && Objects.equals(startTime, task.startTime);
+        return id == task.id && Objects.equals(name, task.name) && status == task.status && Objects.equals(description, task.description) && Objects.equals(startTime, task.startTime) && Objects.equals(duration, task.duration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, description, startTime);
+        return Objects.hash(id, name, status, description, startTime, duration);
     }
 
     @Override
@@ -82,9 +99,10 @@ public class Task {
         return "Task{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 ", description='" + description + '\'' +
-                ", startTime="+ startTime + '\'' +
+                ", startTime=" + startTime +
+                ", duration=" + duration +
                 '}';
     }
 
