@@ -1,13 +1,20 @@
 package ivanov;
 
+import ivanov.model.Status;
 import ivanov.model.Task;
 import ivanov.service.*;
+
+import java.time.Instant;
 
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = Managers.getDefaultTaskManager();
         Task task = taskManager.createTask(new Task("Новая задача"));
         System.out.println("Create task: " + task);
+
+        Task allArgTask = taskManager.
+                createTask(new Task(20, "Имя", Status.NEW, "Описание", Instant.now(), 20));
+        System.out.println("Create task: " + allArgTask);
 
         Task taskFromManager = taskManager.getTaskById(task.getId());
         System.out.println("Get task: " + taskFromManager);

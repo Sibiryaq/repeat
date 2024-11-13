@@ -5,9 +5,7 @@ import ivanov.model.Status;
 import ivanov.model.Subtask;
 import ivanov.model.Task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class InMemoryTaskManager implements TaskManager {
     protected int sequenceId;
@@ -15,6 +13,7 @@ public class InMemoryTaskManager implements TaskManager {
     protected HashMap<Integer, Epic> epics;
     protected HashMap<Integer, Subtask> subtasks;
     protected HistoryManager historyManager;
+    TreeSet<Task> prioritizedTasks = new TreeSet<>(Comparator.comparingInt(Task::getDuration));
 
     public InMemoryTaskManager(HistoryManager historyManager) {
         this.sequenceId = 0;
@@ -28,6 +27,7 @@ public class InMemoryTaskManager implements TaskManager {
     public Task createTask(Task task) {
         task.setId(generateId());
         tasks.put(task.getId(), task);
+        prioritizedTasks.add(task);
         return task;
     }
 
@@ -49,21 +49,30 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public Task getTaskById(int id) {
-        Task task = tasks.getOrDefault(id, null);
+        Task task = tasks.get(id);
+        if (task == null) {
+            return null;
+        }
         historyManager.add(task);
         return task;
     }
 
     @Override
     public Subtask getSubtaskById(int id) {
-        Subtask subtask = subtasks.getOrDefault(id, null);
+        Subtask subtask = subtasks.get(id);
+        if (subtask == null) {
+            return null;
+        }
         historyManager.add(subtask);
         return subtask;
     }
 
     @Override
     public Epic getEpicById(int id) {
-        Epic epic = epics.getOrDefault(id, null);
+        Epic epic = epics.get(id);
+        if (epic == null) {
+            return null;
+        }
         historyManager.add(epic);
         return epic;
     }
