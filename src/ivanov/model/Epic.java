@@ -1,5 +1,6 @@
 package ivanov.model;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,10 @@ public class Epic extends Task {
 
     public Epic(String name) {
         super(name);
+    }
+
+    public Epic(int id, String name, String description, Instant startTime) {
+        super(id, name, description, startTime);
     }
 
     public List<Subtask> getSubtasks() {
@@ -26,13 +31,7 @@ public class Epic extends Task {
     @Override
     public String toString() {
         return "Epic{" +
-                ", name='" + getName() + '\'' +
-                ", status='" + getStatus() + '\'' +
-                ", description='" + getDescription() + '\'' +
-                ", startTime=" + getStartTime() + '\'' +
-                ", duration=" + getDuration() + '\'' +
-                ", endTime=" + getEndTime() +
-                ", subtasks ID: [" + getSubtasks() +
-                "]}";
+                "subtasks=" + subtasks +
+                "} " + super.toString();
     }
 }

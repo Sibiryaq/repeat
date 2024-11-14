@@ -44,6 +44,13 @@ public class Task {
         this.endTime = task.endTime;
     }
 
+    public Task(int id, String name, String description, Instant startTime) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.startTime = startTime;
+    }
+
     public int getId() {
         return id;
     }

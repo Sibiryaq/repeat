@@ -86,7 +86,7 @@ public class KVServer {
     }
 
     private void register(HttpExchange h) throws IOException {
-        try {
+        try (h) {
             System.out.println("\n/register");
             if ("GET".equals(h.getRequestMethod())) {
                 sendText(h, apiToken);
@@ -94,8 +94,6 @@ public class KVServer {
                 System.out.println("/register ждет GET-запрос, а поучил: " + h.getRequestMethod());
                 h.sendResponseHeaders(405, 0);
             }
-        } finally {
-            h.close();
         }
     }
 

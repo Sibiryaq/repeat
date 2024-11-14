@@ -140,7 +140,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
         save();
     }
 
-    public static FileBackedTaskManager loadFromFile(File file) {
+    public FileBackedTaskManager loadFromFile(File file) {
         FileBackedTaskManager fileBackedTaskManager = new FileBackedTaskManager(file);
         try {
             String data = Files.readString(Path.of(file.getAbsolutePath()));
@@ -175,7 +175,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
         return fileBackedTaskManager;
     }
 
-    private void save() {
+    protected void save() {
         try (Writer writer = new FileWriter(file)) {
             writer.write("id,type,name,status,description,epic\n");
             List<Task> allTasks = new ArrayList<>();
