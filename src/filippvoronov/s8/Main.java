@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
-    final static String YANDEX_API_KEY = "AQAAAABhXZDvAADLW6MdwYMiPkaWvuUYwMMxSk0";
+    final static String YANDEX_API_KEY = "AQAA*******************xSk0";
     private static final int PORT = 8888;
 
     public static void main(String[] args) throws Exception {
