@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import ivanov.server.KVClient;
 import ivanov.service.Managers;
 
-public class HttpTaskRepository extends TaskRepository {
+public class HttpTaskRepository implements TaskRepository {
     private KVClient client;
     private Gson gson = Managers.getGson();
 

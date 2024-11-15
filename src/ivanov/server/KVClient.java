@@ -25,7 +25,7 @@ public class KVClient {
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() != 200) {
-                throw new ManagerSaveException("Can't do save request, status code: " + response.statusCode())
+                throw new ManagerSaveException("Can't do save request, status code: " + response.statusCode());
             }
             token = response.body();
         } catch (IOException | InterruptedException e) {

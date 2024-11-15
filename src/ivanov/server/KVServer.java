@@ -110,7 +110,7 @@ public class KVServer {
 
     protected boolean hasAuth(HttpExchange h) {
         String rawQuery = h.getRequestURI().getRawQuery();
-        return rawQuery != null && (rawQuery.contains("API_TOKEN=" + apiToken) || rawQuery.contains(  ));
+        return rawQuery != null && (rawQuery.contains("API_TOKEN=" + apiToken));
     }
 
     protected String readText(HttpExchange h) throws IOException {
