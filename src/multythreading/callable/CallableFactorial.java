@@ -30,5 +30,9 @@ public class CallableFactorial {
             executorService.shutdown();
         }
         System.out.println(factorialResult);
+
+        int i = 5;
+        i = i++ + ++i;
+        System.out.println(i);
     }
 }
