@@ -1,4 +1,4 @@
-package multuthreading.deadlock;
+package multythreading.deadlock;
 
 /**
  * DeadLock - ситуация когда 2 и более потоков залочены навсегда, ожидают друг друга и ничего не делают

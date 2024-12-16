@@ -1,4 +1,4 @@
-package multuthreading.deadlock;
+package multythreading.deadlock;
 
 public class Thread10 extends Thread{
 

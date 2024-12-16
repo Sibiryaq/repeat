@@ -1,4 +1,4 @@
-package multuthreading.waitAndNotify;
+package multythreading.waitAndNotify;
 
 public class WaitNotifyExample {
     public static void main(String[] args) {

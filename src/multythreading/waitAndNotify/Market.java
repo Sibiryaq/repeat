@@ -1,4 +1,4 @@
-package multuthreading.waitAndNotify;
+package multythreading.waitAndNotify;
 
 public class Market {
     private int breadCount = 0;

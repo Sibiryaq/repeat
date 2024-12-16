@@ -1,4 +1,7 @@
-package multuthreading;
+package multythreading;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Lock starvation (голодание)
@@ -6,8 +9,12 @@ package multuthreading;
  * В этом примере, потоки с низким проритетом могут пострадать от голодания,
  * потому что поток с высоким приоритетом постоянно захватывает блокировку
  * и не дает шанса низкоприоритеттным потокам работать с ресурсом
+ *
+ * Cпособы устранения - удаление приоритетов, временные блокировки, квоты на работу, использование fair locks
  */
 public class LockStarvation {
+    private static final Lock fairLock = new ReentrantLock(true);
+
     public static void main(String[] args) {
         final Object lock = new Object();
 

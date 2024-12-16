@@ -1,4 +1,4 @@
-package multuthreading;
+package multythreading;
 
 /**
  * Data Race возникат когда два или более потока пытаются читать и записывать одну и ту же переменную

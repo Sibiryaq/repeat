@@ -1,4 +1,4 @@
-package multuthreading.waitAndNotify;
+package multythreading.waitAndNotify;
 
 public class Producer implements Runnable {
     Market market;

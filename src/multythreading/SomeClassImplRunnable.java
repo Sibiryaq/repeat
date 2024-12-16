@@ -1,4 +1,4 @@
-package multuthreading;
+package multythreading;
 
 public class SomeClassImplRunnable implements Runnable{
     @Override
